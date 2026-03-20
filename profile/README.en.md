@@ -1,5 +1,5 @@
 <div align="center">
-[German](profile/(README.md) | English
+[German](README.md) | English
 </div>
 
 <pre align="center">
