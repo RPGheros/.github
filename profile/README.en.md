@@ -1,5 +1,5 @@
 <div align="center">
-[Deutsch](https://github.com/RPGheros/.github/blob/main/profile/README.md) | [English](https://github.com/RPGheros/.github/blob/main/profile/README.en.md)
+  <a href="https://github.com/RPGheros/.github/blob/main/profile/README.md">🇩🇪 German</a> | 🇺🇸 English
 </div>
 
 <pre align="center">
