@@ -1,134 +1,189 @@
 Deutsch | [English](README.en.md)
 
-# ShellRPG-server · v0.0.2
+```text
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  |||||||                                                           |||||||  ║
+║  |||||||      .-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.    |||||||  ║
+║  |||||||      |     _____ _          _ _ ____  ____   ____    |    |||||||  ║
+║  |||||||      |    / ____| |        | | |  _ \|  _ \ / ___|   |    |||||||  ║
+║  |||||||      |   | (___ | |__   ___| | | |_) | |_) | |  _    |    |||||||  ║
+║  |||||||      |    \___ \| '_ \ / _ \ | |  _ <|  __/| |_| |   |    |||||||  ║
+║  |||||||      |    ____) | | | |  __/ | | |_) | |    \____|   |    |||||||  ║
+║  |||||||      |   |_____/|_| |_|\___|_|_|____/|_|               |    |||||||  ║
+║  |||||||      '-----------------------------------------------'    |||||||  ║
+║  |||||||            \    papyrus scroll // laurel // skulls  /     |||||||  ║
+║  |||||||             \______________________________________/       |||||||  ║
+║  |||||||                                                           |||||||  ║
+║  |||||||      _.._                                 _.._            |||||||  ║
+║  |||||||    .'_  _'.   skull      ivy      skull .'_  _'.          |||||||  ║
+║  |||||||    |(_)(_)|---/////----<\\>----/////---|(_)(_)|          |||||||  ║
+║  |||||||    |  /\  |  //  //      ||      \  \  |  /\  |          |||||||  ║
+║  |||||||    |_/  \_| //__//       ||       \__\ |_|  \_|          |||||||  ║
+║  |||||||      /||\    /||\        ||        /||\    /||\            |||||||  ║
+║  |||||||     /_||_\  /_||_\      /__\      /_||_\  /_||_\           |||||||  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+```
 
-> **Status:** Reversion / normalized release
+# ShellRPG Organisation
+
+> Öffentliche Gesamtübersicht der ShellRPG-Projektlandschaft.
 >
-> **Governance-Layer:** SERVER-PRIVAT
->
-> **Kurzfassung:** Neu versionierter und konsistent verpackter Stand, der den vorherigen Build auf v0.0.2 normalisiert.
+> Diese README beschreibt **nur freigabefähige Informationen**. Private Server-Interna, Sicherheitsmechaniken, Betriebsdetails und andere owner-only-Inhalte sind bewusst nicht enthalten.
 
-## Zweck dieses Artefakts
+## Was ShellRPG ist
 
-Privater, serverautoritiver Kern. Berechnet Weltzustand, Kampf, Städte, Ökonomie, Tick-Logik, Sicht, Belagerungen und Integrität.
+**ShellRPG** ist ein serverautoritativer Dark-Fantasy-RPG-Verbund mit vier klar getrennten Artefaktrollen:
 
-## Wozu dieses Artefakt gedacht ist
+- **ShellRPG-server** — proprietärer Simulations- und Autoritätskern
+- **ShellRPG-client** — öffentlicher Shell-/Terminal-Client
+- **ShellRPG-www** — öffentlicher Web-Client
+- **ShellRPG-wiki** — redigierte Dokumentations- und Wissensschicht
 
-Dieses Artefakt ist **nicht isoliert** gedacht. Es ist Teil des vierteiligen ShellRPG-Verbunds und arbeitet mit den übrigen Artefakten zusammen:
+Im Zentrum steht eine persistente Fantasywelt mit Tick-Simulation, rundenbasiertem Kampf im Hybridmodell, Weltkarte, Fraktionen, Crafting, Handel, Städten, Garnisonen, Belagerungen und mehrsprachiger Ausgabe.
 
-- ShellRPG-client; ShellRPG-www; ShellRPG-wiki
-- gemeinsamer Datenvertrag / gemeinsamer Spielzustand
-- konsistente README-, Revisions- und Release-Logik
+## Öffentliche Repositories und ihre Aufgaben
 
-## Was in dieser Version enthalten ist
+## 1. ShellRPG-client
 
-- Version normalisiert
-- TOML-Dateien aktualisiert
-- Packaging bereinigt
-- Tests/Health geprüft
+Öffentlicher Terminal-Client für Eingabe, Statusdarstellung, Karteninformationen, Ereignisrückmeldungen und Shell-nahe Interaktion.
 
-## Verknüpfung mit den anderen Artefakten
+Typische Aufgaben:
+- Spielbefehle senden
+- Status, Kartenlage, Inventar und Ereignisse darstellen
+- Terminal-Fallbacks und ASCII-/GIF-/ANSI-Verknüpfungen verwalten
+- optionaler Standalone-Modus mit kombiniertem Dashboard
 
-- **Server** bleibt immer die Wahrheitsquelle für kritische Simulation.
-- **Client** und **WWW** sind zwei öffentliche Interaktionsschichten für denselben Kern.
-- **Wiki** dokumentiert Spiel, Bedienung und Architektur redigiert.
+## 2. ShellRPG-www
 
-## Typische Ordnerstruktur
+Öffentlicher Web-Client für grafische Übersicht, Worldmap, Charakterfenster, Inventar, Marktansicht, Aktionsübersicht und andere komfortorientierte Oberflächen.
 
-- `src/shellrpg_server/`
-- `docs-private/`
-- `tests/`
-- `pyproject.toml`
-- `shellrpg.manifest.toml`
+Typische Aufgaben:
+- Worldmap und Bewegungszustände anzeigen
+- Ausrüstung, Fähigkeiten, Inventar und Markt visualisieren
+- Panels für Städte, Garrison, Miliz und andere Systeme darstellen
+- Asset- und Sprite-Verknüpfungen nutzen
 
-## Voraussetzungen
+## 3. ShellRPG-wiki
 
-- Python 3.11 oder neuer für Python-Artefakte
-- Browser für `ShellRPG-www`
-- optional Git für lokale Repository-Arbeit
-- unter Windows empfohlen: PowerShell oder CMD
+Öffentliche und redigierte Wissensschicht für Welt, Fraktionen, Systeme, Bedienung, Handbuch, Glossar und FAQ.
 
-## Build / Installation
+Typische Aufgaben:
+- Spieler- und Designerwissen dokumentieren
+- Repositories und Systeme verständlich erklären
+- öffentliche Architektur- und Bedienhinweise bündeln
+- Lore, Fraktionen, Klassen, Monster und Wirtschaft erklären
 
-```bash
-python -m pip install -e .
-python -m pip install build pytest
+## 4. ShellRPG-server
+
+Der Server ist Teil des Gesamtverbunds, wird organisationsöffentlich aber **nur auf hoher Ebene** beschrieben.
+
+Öffentlich erklärbar:
+- Der Server ist die Wahrheitsquelle
+- Er berechnet Weltzustand, Kampf, Sicht, Ökonomie, Städte, Garnisonen und Ereignisse
+- Öffentliche Clients sind nie die Autorität für kritische Zustände
+
+Nicht öffentlich dokumentiert werden:
+- Anti-Cheat-Details
+- Sicherheitsheuristiken
+- operative Recovery-Interna
+- owner-only Betriebs- und Moderationsabläufe
+
+## Wie die Repositories zusammenhängen
+
+Die Organisation ist bewusst **nicht** als lose Sammlung einzelner Projekte gedacht. Die Artefakte sind logisch gekoppelt:
+
+- `ShellRPG-client` und `ShellRPG-www` sprechen denselben serverautoritativen Kern an
+- `ShellRPG-wiki` dokumentiert die Welt, die Bedienung und die redigierten Systemsichten
+- Änderungen an Spielzustand, Datenschema oder Bedienlogik wirken sich in der Praxis fast immer auf mehrere Repositories aus
+
+## Governance-Modell
+
+ShellRPG arbeitet mit drei Governance-Ebenen:
+
+1. **SERVER-PRIVAT**
+2. **CLIENT-PUBLIC**
+3. **WIKI-REDACTED**
+
+Diese Trennung ist kein kosmetischer Ordnungsversuch, sondern ein Kernprinzip für Sicherheit, Release-Disziplin und Dokumentationsklarheit.
+
+## Was Besucher hier erwarten dürfen
+
+Besucher der Organisation sollen schnell verstehen:
+- was ShellRPG ist
+- welche Repositories öffentlich sind
+- wofür jedes Artefakt gedacht ist
+- wie öffentliche Clients und redigierte Doku zusammenarbeiten
+- dass es eine klare Trennung zwischen öffentlicher Oberfläche und privatem Serverkern gibt
+
+## Build- und Nutzungsmodell auf hoher Ebene
+
+Öffentlich übliche Reihenfolge:
+
+1. Server lokal oder in geeigneter Umgebung bereitstellen
+2. Terminal-Client oder WWW-Client starten
+3. Wiki als Referenz und Handbuch nutzen
+
+Die konkreten Build- und Startschritte liegen in den jeweiligen Artefakt-READMEs.
+
+## Release- und Versionsverständnis
+
+ShellRPG verwendet versionierte Artefaktstände. Öffentlich sichtbar sind insbesondere:
+- Foundations
+- Vertical Slices
+- System- und Inhaltsphasen
+
+Projektregel:
+- **reine Build-/Bugfixes erhöhen die Versionsnummer nicht**
+- funktionale Erweiterungen erzeugen neue funktionale Revisionen
+
+## Öffentliche Themenfelder des Projekts
+
+- Terminal-RPG-UX
+- Web-Interface für dieselbe Spielwelt
+- Fraktionen, Städte, Wirtschaft und Tile-Buildings
+- Crafting, Socketing, Enchanting und Seelenstein-Systeme
+- Monster-, Biome- und Waffenvielfalt
+- Garnisonen, Milizen, Generäle und Fraktionsdruck
+- redigierte Lore- und Weltdokumentation
+
+## Was diese Organisations-README bewusst nicht tut
+
+Sie ist:
+- **keine** vollständige technische Serverdokumentation
+- **keine** Anti-Cheat-Beschreibung
+- **kein** Betreiberhandbuch
+- **kein** Ersatz für die Artefakt-READMEs
+
+Sie ist die **öffentliche Landkarte der Organisation**.
+
+## Google AdSense / Werbung
+
+GitHub-READMEs sind nicht der richtige Ort für AdSense-Integration. GitHub rendert Markdown und sanitisiert/entfernt Styles und Skript-Anteile stark, weshalb Anzeigenlogik in der README weder zuverlässig noch sinnvoll eingebettet wird. Für Werbung oder Monetarisierung wäre eine separat gehostete Webpräsenz die saubere Stelle. 
+
+## Empfohlene Leserouten
+
+- **Neue Besucher** → erst diese README, dann `ShellRPG-wiki`
+- **Spielinteressierte** → `ShellRPG-client` und `ShellRPG-www`
+- **Lore-Interessierte** → `ShellRPG-wiki`
+- **Mitwirkende an öffentlichen Oberflächen** → `ShellRPG-client` + `ShellRPG-www` + `ShellRPG-wiki`
+
+## FAQ
+
+### Ist der Server öffentlich?
+Nein. Öffentlich beschrieben wird er nur auf hoher Ebene.
+
+### Gibt es zwei Clients?
+Ja. Einen Terminal-Client und einen Web-Client.
+
+### Ist die Wiki nur für Lore da?
+Nein. Sie enthält auch Bedienung, Glossar, FAQ und redigierte Systemsichten.
+
+### Wo finde ich Start- und Buildschritte?
+In den jeweiligen Artefakt-READMEs.
+
+```text
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  |||||||    Rome / Greek border • laurel ivy • skull relief • ShellRPG    ║
+║  |||||||    Public surface only • no private server internals in README    ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 ```
-
-## Start / Ausführung
-
-```bash
-python -m shellrpg_server
-```
-
-## Tests / Validierung
-
-```bash
-pytest
-```
-
-## Empfohlene Startreihenfolge im Projektverbund
-
-1. `ShellRPG-server` starten
-2. danach `ShellRPG-client` **oder** `ShellRPG-www`
-3. `ShellRPG-wiki` als Handbuch / redigierte Referenz verwenden
-
-## Wichtige Bedienhinweise
-
-- Diese Version ist als **Reversion / normalized release** zu lesen, nicht als finaler Gesamtstand.
-- Änderungen an einem Artefakt müssen immer gegen Server, beide Clients und Wiki mitgedacht werden.
-- Reine Build-/Bugfixes erhöhen gemäß Projektregel **nicht** automatisch die Versionsnummer.
-
-## Google AdSense / Monetarisierung
-
-Für dieses Artefakt gilt: Eine GitHub-`README.md` ist Dokumentation, **keine** geeignete AdSense-Auslieferungsfläche. Monetarisierung gehört – wenn überhaupt – in eine **separat gehostete Weboberfläche** oder Dokumentationsseite, nicht in die Projekt-README selbst.
-
-Praktisch bedeutet das für ShellRPG:
-
-- AdSense gehört eher in eine eigenständig gehostete Informations-/Projektseite oder in eine öffentliche Dokumentationsseite außerhalb von GitHub-README-Rendering.
-- `ShellRPG-www` ist der sinnvollere technische Kandidat für eine spätere, sauber getrennte Monetarisierungsschicht.
-- Der private Server und die redigierte Wiki-Doku müssen von Werbe- und Tracking-Entscheidungen getrennt betrachtet werden.
-
-## Für wen diese README gedacht ist
-
-- Owner / Entwickler
-- Mitwirkende
-- Tester
-- GitHub-Besucher, die schnell verstehen müssen:
-  - was dieses Artefakt tut
-  - wozu es gedacht ist
-  - wie es gebaut wird
-  - wie es mit den anderen Artefakten zusammenspielt
-
-## Release- und Revisionshinweise
-
-- Zielstand: **v0.0.2**
-- Deutsche Haupt-README: `README.md`
-- Englische Fassung: `README.en.md`
-- Zu jedem relevanten Release müssen README und Dokumentation mitgezogen werden
-- ZIP-Artefakte werden je Artefakt getrennt ausgeliefert
-
-## Troubleshooting
-
-### Paket startet nicht
-- Python-Version prüfen
-- virtuelle Umgebung aktivieren
-- `pip install -e .` erneut ausführen
-
-### Server/Client sprechen nicht miteinander
-- zuerst `ShellRPG-server` starten
-- Host/Port prüfen
-- lokale Firewall / Browser-Origin prüfen
-
-### WWW zeigt nichts an
-- statischen Webserver nutzen
-- Browser-Konsole prüfen
-- sicherstellen, dass der Server parallel läuft
-
-### Wiki wirkt unvollständig
-- das ist je nach Version normal, solange der Ausbaupfad dokumentiert ist
-- redigierte Inhalte sind absichtlich nicht gleichbedeutend mit privater Serverdoku
-
-## Abschluss
-
-Diese README ist bewusst ausführlich, damit ein Besucher oder Mitwirkender ohne Vorwissen verstehen kann, **was ShellRPG-server ist, was es nicht ist und wie es in den ShellRPG-Verbund passt**.
