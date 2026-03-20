@@ -396,10 +396,6 @@ Sie ist:
 
 Sie ist die **öffentliche Landkarte der Organisation**.
 
-## Google AdSense / Werbung
-
-GitHub-READMEs sind nicht der richtige Ort für AdSense-Integration. GitHub rendert Markdown und sanitisiert/entfernt Styles und Skript-Anteile stark, weshalb Anzeigenlogik in der README weder zuverlässig noch sinnvoll eingebettet wird. Für Werbung oder Monetarisierung wäre eine separat gehostete Webpräsenz die saubere Stelle. 
-
 ## Empfohlene Leserouten
 
 - **Neue Besucher** → erst diese README, dann `ShellRPG-wiki`
