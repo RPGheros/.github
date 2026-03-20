@@ -1,5 +1,5 @@
 <div align="center">
-German | [English](README.en.md)
+[Deutsch](https://github.com/RPGheros/.github/blob/main/profile/README.md) | [English](https://github.com/RPGheros/.github/blob/main/profile/README.en.md)
 </div>
 
 <pre align="center">
